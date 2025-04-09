@@ -1,6 +1,6 @@
 # Arquitectura-y-Conectiviad-Grupo2
 ### Profesor: Ing. Jorge Elías Morales.
-
+###
 ### Grupo N° 2:
 
 - Huk, Romina vanesa - [GitHub: RoHu17](https://github.com/RoHu17)
