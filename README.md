@@ -1,2 +1,3 @@
 # Arquitectura-y-Conectiviad-Grupo2
-Monorepositorio para la materia Arquitectura y Conectiviad
+##
+### Profesor: Ing. Jorge Elías Morales.
