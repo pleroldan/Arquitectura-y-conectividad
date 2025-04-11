@@ -1,4 +1,1 @@
-#LOGO
-#Electronicamicrocontrolada
-#datos
-#resumen del desarrollo
+## Arquitectura y Conectividad
