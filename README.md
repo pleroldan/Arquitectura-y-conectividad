@@ -1,4 +1,7 @@
-# Arquitectura-y-Conectiviad-Grupo2
+# Arquitectura-y-Conectiviad
+![image](https://github.com/user-attachments/assets/e4e23b19-34c0-4010-a98c-fc7c4393c38f)
+
+
 ### Profesor: Ing. Jorge Elías Morales.
 ##
 
