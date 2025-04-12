@@ -1,4 +1,4 @@
-## 🔗 Protocolos de Acceso a la Red
+## 04 🔗 Protocolos de Acceso a la Red
 Este protocolo permite la conexión física o inalámbrica entre dispositivos. Son la base de la comunicación, como elegir entre hablar, escribir o hacer gestos. Son fundamentales para establecer el canal por el cual se enviarán los datos.  
 
   Algunos ejemplos pueden ser:
