@@ -74,9 +74,7 @@ Las modulaciones definen cómo se codifican los datos en señales para su transm
 - **O-QPSK** (*Offset Quadrature Phase-Shift Keying*):
   - Variante de QPSK con menor consumo (empleada en Zigbee).
 
----  
 
----  
 
 ---
 
