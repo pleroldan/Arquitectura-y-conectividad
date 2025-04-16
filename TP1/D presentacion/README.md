@@ -28,15 +28,16 @@ El modelo OSI (Open Systems Interconnection) es un marco de referencia que divid
 | 1 | Física | Transmisión de bits a través del medio físico (ej: cables, señales inalámbricas). |
 
 
-|  |  |
-|--|--|
-| 7 . Aplicación → Interacción usuario-red
+
+7 . Aplicación → Interacción usuario-red
 6 . Presentación → Cifrado/compresión 
 5.  Sesión → Gestión de conexiones 
 4 . Transporte → Control de flujo/errores
 3 . Red → Enrutamiento 
 2 . Enlace de datos → Transferencia entre nodos
-1 . Física → Transmisión física | ![osi](https://photos.app.goo.gl/AuRRXiwoMpFN7Sv46) |
+1 . Física → Transmisión física 
+
+![osi](https://github.com/tpaez/Arquitectura-y-Conectiviad--Grupo2/blob/main/TP1/C%20prototipo/OSI.png) 
 
 
 ---  
@@ -59,8 +60,8 @@ Los dispositivos IoT se comunican mediante protocolos inalámbricos o cableados,
   
     
     
-**Esquema:**
-![comunicacion](https://photos.app.goo.gl/1vHDdrzU9dird5yw5)  
+**Esquema:**  
+![comunicacion](https://github.com/tpaez/Arquitectura-y-Conectiviad--Grupo2/blob/main/TP1/C%20prototipo/Comunicacion.png)    
 *Dispositivo IoT → Gateway → Nube (Plataforma IoT) → Aplicación móvil/web*
 
 ---   
@@ -79,7 +80,7 @@ Los dispositivos IoT son objetos físicos conectados a Internet que recopilan, t
 
 
 
-![03-ejemplos](foto.png)
+![03-ejemplos](https://github.com/tpaez/Arquitectura-y-Conectiviad--Grupo2/blob/main/TP1/C%20prototipo/03-ejemplos.png)  
 
 
  ---
