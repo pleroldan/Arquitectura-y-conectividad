@@ -28,16 +28,15 @@ El modelo OSI (Open Systems Interconnection) es un marco de referencia que divid
 | 1 | Física | Transmisión de bits a través del medio físico (ej: cables, señales inalámbricas). |
 
 
-
-7 . Aplicación → Interacción usuario-red   
-6 . Presentación → Cifrado/compresión  
-5.  Sesión → Gestión de conexiones   
-4 . Transporte → Control de flujo/errores  
-3 . Red → Enrutamiento   
-2 . Enlace de datos → Transferencia entre nodos  
-1 . Física → Transmisión física   
-
-![osi](https://github.com/tpaez/Arquitectura-y-Conectiviad--Grupo2/blob/main/TP1/C%20prototipo/OSI.png) 
+|  |  |
+|--|--|
+| 7 . Aplicación → Interacción usuario-red
+6 . Presentación → Cifrado/compresión 
+5.  Sesión → Gestión de conexiones 
+4 . Transporte → Control de flujo/errores
+3 . Red → Enrutamiento 
+2 . Enlace de datos → Transferencia entre nodos
+1 . Física → Transmisión física | ![osi](https://photos.app.goo.gl/AuRRXiwoMpFN7Sv46) |
 
 
 ---  
@@ -60,8 +59,131 @@ Los dispositivos IoT se comunican mediante protocolos inalámbricos o cableados,
   
     
     
-**Esquema:**  
-
-![comunicacion](https://github.com/tpaez/Arquitectura-y-Conectiviad--Grupo2/blob/main/TP1/C%20prototipo/Comunicacion.png)    
-
+**Esquema:**
+![comunicacion](https://photos.app.goo.gl/1vHDdrzU9dird5yw5)  
 *Dispositivo IoT → Gateway → Nube (Plataforma IoT) → Aplicación móvil/web*
+
+---   
+
+#### **3) Ejemplifique qué son dispositivos IoT.**
+
+Los dispositivos IoT son objetos físicos conectados a Internet que recopilan, transmiten y procesan datos.  **Ejemplos**:
+
+- Dispositivos domésticos inteligentes: Termostatos, refrigeradores, televisores, bombillas, cerraduras, detectores de humo.   
+- Dispositivos portátiles: Relojes inteligentes, pulseras, zapatillas deportivas con GPS. 
+- Sensores: Sensores de humedad para la agricultura, sensores industriales para los automóviles, sensores para medir la calidad del aire. 
+- Electrodomésticos inteligentes: Neveras que indican la fecha de caducidad, lavadoras, secadoras.
+- Dispositivos de seguridad: Sistemas de seguridad para el hogar, sensores médicos. 
+- Dispositivos de automatización: Sistemas de automatización de edificios, sistemas de jardines inteligentes. 
+- Dispositivos para la industria: Cascos, exoesqueletos, botas, guantes, gafas Los dispositivos IoT se gestionan a través de interfaces gráficas de usuario (IU), como sitios web o aplicaciones móviles. 
+
+
+
+![03-ejemplos](foto.png)
+
+
+ ---
+
+#### **4) ¿Qué tecnologías han hecho posible el IoT? Mencione 5 ejemplos.**
+1.  **Protocolos de comunicación**:
+        -   MQTT, CoAP (para transmisión eficiente de datos).
+   2.  **Redes inalámbricas**:
+        -   Wi-Fi, Bluetooth, LoRaWAN, NB-IoT.
+3.  **Plataformas en la nube**:
+        -   AWS IoT Core, Azure IoT Hub (almacenamiento y análisis de datos).
+4.  **Sensores y actuadores**:
+        -   Sensores de temperatura, humedad, GPS.
+5.  **Tecnologías de bajo consumo**:
+        -   Zigbee, Z-Wave (para dispositivos con baterías de larga duración).
+
+
+---
+
+#### **5) ¿Qué es la comunicación de datos en serie? Describa su funcionamiento.**
+
+La comunicación de datos en serie es un método que **envía y recibe datos un bit a la vez**, a través de un solo canal de comunicación. Es un método común para conectar computadoras y dispositivos periféricos.
+
+-   **Funcionamiento**:
+1.  **Conversión de datos paralelo a serie**:
+    -   Los datos en un sistema digital suelen manejarse en formato paralelo (ej: un byte = 8 bits en paralelo).
+    -   Un  **transceptor serial**  (como un UART) convierte estos datos en una secuencia de bits para su transmisión.
+2.  **Transmisión bit a bit**:
+    -   Cada bit se envía en orden, generalmente comenzando por el  **bit menos significativo (LSB)**  o el  **bit más significativo (MSB)**, según el protocolo.
+3.  **Sincronización**:
+    -   **Comunicación síncrona**: Usa una señal de reloj compartida (ej: SPI, I²C).
+    -   **Comunicación asíncrona**: No requiere reloj; usa bits de inicio/parada (ej: UART).
+4.  **Recepción y reconstrucción**:
+    -   El receptor reensambla los bits en el dato original usando la misma convención de orden (LSB/MSB).
+    -   Se verifican errores mediante técnicas como  **bits de paridad**  o checksums.   
+
+
+-   **Características**:
+    -   Usa un solo cable y/u opcionalmente tierra y reloj.
+    -   Ideal para distancias largas y bajo ancho de banda.
+---   
+
+#### **6) ¿Cuáles son los protocolos serie más usados? Nombre 3 y descríbalos.**
+
+Los **Protocolos serie** genéricos mas usados son: 
+1.  **UART (Universal Asynchronous Receiver-Transmitter)**:
+    -   Asíncrono, sin reloj compartido. Usado en módulos GPS y Bluetooth.
+2.  **I²C (Inter-Integrated Circuit)**:
+    -   Comunicación maestro-esclavo con dos cables (datos y reloj). Usado en sensores.
+3.  **SPI (Serial Peripheral Interface)**:
+    -   Síncrono, full-duplex. Usado en pantallas y memorias flash.
+Otros protocolos específicos pueden ser:
+Modbus, LIN, FlexRay, CAN, RS-232
+
+---  
+
+#### **7) ¿Qué es la comunicación de datos en paralelo? Describa su funcionamiento.**
+
+La **comunicación de datos en paralelo** es un método de transmisión donde **múltiples bits se envían simultáneamente** a través de **canales separados** (generalmente cables o pistas de circuito impreso). A diferencia de la comunicación en serie, esta técnica aprovecha el ancho de banda disponible para lograr velocidades de transferencia más altas, aunque con limitaciones en la distancia y complejidad física.
+
+-   **Funcionamiento**:
+    
+1.  **Estructura del bus paralelo**:
+    
+    -   Un bus de datos paralelo típico consta de:
+        
+        -   **Líneas de datos (N bits)**: Por ejemplo, 8, 16, 32 o 64 líneas para transmitir bits en paralelo.
+            
+        -   **Líneas de control**: Señales como  _strobe_  (para sincronización),  _acknowledge_  (confirmación) y  _enable_  (habilitación).
+            
+        -   **Línea de reloj (opcional)**: En sistemas síncronos.
+            
+2.  **Proceso de transmisión**:
+    
+    - **Paso 1**: El dispositivo emisor coloca los bits en las líneas de datos.
+    - **Paso 2**: Las señales de control (como  _strobe_) indican al receptor que los datos están listos.
+    -  **Paso 3**: El receptor captura los datos en todos los canales al mismo tiempo (en el flanco de subida/bajada del reloj o señal de control).
+    -**Paso 4**: El receptor envía una señal de  _acknowledge_  para confirmar la recepción.
+3.  **Sincronización**:
+    -   **Comunicación síncrona**: Usa una señal de reloj compartida para coordinar la transmisión (ej: buses PCI en computadoras).
+    -   **Comunicación asíncrona**: Emplea señales de control (_handshaking_) para validar los datos (ej: IEEE 1284 en impresoras).
+
+#### **Características clave**
+
+| **Aspecto** | **Comunicación Paralela** | **Comunicación Serie** |
+| --- | --- | --- |
+| **Velocidad** | Alta (transfiere N bits por ciclo). | Baja (1 bit por ciclo). |
+| **Complejidad** | Requiere múltiples cables y sincronización precisa. | Minimalista (1-2 cables). |
+| **Distancia máxima** | Limitada (&lt; 1 metro, por problemas de skew). | Eficiente en largas distancias (km). |
+| **Costo** | Alto (por el número de pistas/cables). | Bajo. |
+| **Inmunidad al ruido** | Susceptible a interferencias (cross-talk entre líneas). | Más robusta (menos líneas expuestas). |
+
+---
+
+
+#### **8) ¿Cuáles son los protocolos paralelo más usados? Nombre alguno y descríbalo.**
+
+ **IEEE 1284 (Puerto Paralelo Estándar)**
+Es un Protocolo paralelo clásico para conectar periféricos como impresoras y escáneres a computadoras. Usa 8 líneas de datos + 5 líneas de control (Strobe, Busy, Ack, etc.).
+
+**GPIB (General Purpose Interface Bus) / IEEE 488**
+Protocolo paralelo usado en instrumentación científica y automatización industrial. Usa 8 líneas de datos + 8 líneas de control (gestión de handshaking).
+
+**Bus PCI (Peripheral Component Interconnect)**
+  Protocolo paralelo para conectar tarjetas de expansión en computadoras. Utiliza 32 o 64 líneas de datos + líneas de dirección y control.
+ **Bus ISA (Industry Standard Architecture)**
+ Es un antiguo estándar para PCs y sistemas industriales.
