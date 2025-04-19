@@ -51,6 +51,7 @@ Para controlar los píxeles de la pantalla de televisión.
 ¿Qué es la modulación?
 La modulación es un proceso que permite transmitir información a través de una señal portadora, como una onda de radio, una fibra óptica o un cable.
 ![image](https://github.com/user-attachments/assets/df8fb04c-a787-44ba-b8d9-fb88c1a5ed71)
+
 La modulación de amplitud (AM) se usa en sistemas de radio y comunicaciones, como la radiofonía, los módems y los sistemas de radio bidireccional. 
 
 ¿Cómo funciona la AM?
