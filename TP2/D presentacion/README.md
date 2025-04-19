@@ -52,6 +52,7 @@ Para controlar los píxeles de la pantalla de televisión.
 La modulación es un proceso que permite transmitir información a través de una señal portadora, como una onda de radio, una fibra óptica o un cable.
 ![image](https://github.com/user-attachments/assets/df8fb04c-a787-44ba-b8d9-fb88c1a5ed71)
 La modulación de amplitud (AM) se usa en sistemas de radio y comunicaciones, como la radiofonía, los módems y los sistemas de radio bidireccional. 
+
 ¿Cómo funciona la AM?
 Se modifica la amplitud de una señal portadora de alta frecuencia, de acuerdo con la señal que se quiere transmitir. 
 Esto crea dos nuevas frecuencias de banda lateral, por encima y por debajo de la frecuencia portadora. 
@@ -65,6 +66,7 @@ Para controlar los píxeles de la pantalla de televisión.
 ¿Qué es la modulación?
 La modulación es un proceso que permite transmitir información a través de una señal portadora, como una onda de radio, una fibra óptica o un cable.
 ![image](https://github.com/user-attachments/assets/eac8e2a3-54f3-4059-ae50-3f8c91a20ea2)
+
 ¿Cómo se aplica la Amplitud Modulada (AM) en sistemas IoT?. ¿Dónde se usa?. Ejemplifica.
 La Amplitud Modulada (AM) se aplica en sistemas IoT para transmitir información a través de señales de radio, variando la amplitud de una señal portadora de alta frecuencia según la información que se desea transmitir. Se utiliza en aplicaciones que requieren comunicaciones de bajo ancho de banda y larga distancia, como la transmisión de datos de sensores a una estación base central. 
 ![image](https://github.com/user-attachments/assets/052f971c-67ca-4a4d-8014-bf4bd39fda1f)
