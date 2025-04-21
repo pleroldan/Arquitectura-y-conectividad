@@ -98,3 +98,13 @@ En Windows (cmd o PowerShell):
 ```
 mosquitto -v -c "C:\ruta\a\mosquitto.conf"
 ```
+
+
+
+## funcionamiento
+### mosquitto mymqtt
+[MyMQTT](https://youtube.com/shorts/cfQ6MB1EEw0?feature=share)
+
+
+### ESP32
+[ESP32](https://youtube.com/shorts/Y2A_y9fvDgY?feature=share)
