@@ -4,21 +4,20 @@
 #include <Wire.h>
 #include <AHT10.h>
 #include <BH1750.h>
+#include <ArduinoJson.h>
 
 // Configuración WiFi
-const char* ssid = "0101";
-const char* password = "12345678";
+const char* ssid = "Clarowifi4228";
+const char* password = "10052069";
 
 // Configuración MQTT
-const char* mqtt_server = "192.168.199.32";  // IP de tu broker
+const char* mqtt_server = "192.168.100.3";
 const int mqtt_port = 1883;
 const char* mqtt_user = "";
 const char* mqtt_password = "";
 
-// Topics MQTT
-const char* temp_topic = "sensor/aht10/temperatura";
-const char* hum_topic = "sensor/aht10/humedad";
-const char* lux_topic = "sensor/bh1750/lux";
+// Topic MQTT
+const char* env_topic = "sensor/ambiente";
 const char* status_topic = "sensor/estado";
 
 // Objetos
@@ -28,8 +27,18 @@ AHT10 aht10(AHT10_ADDRESS_0X38);
 BH1750 lightMeter;
 
 unsigned long lastMsg = 0;
-#define MSG_BUFFER_SIZE (50)
+const unsigned long publishInterval = 30000; // 30 segundos
+#define MSG_BUFFER_SIZE (256)
 char msg[MSG_BUFFER_SIZE];
+
+// Últimos valores para comparar
+float lastTemp = -1000;
+float lastHum = -1000;
+float lastLux = -1000;
+
+const float deltaTemp = 2.0;
+const float deltaHum = 2.0;
+const float deltaLux = 2.0;
 
 int mqtt_retries = 0;
 const int MAX_MQTT_RETRIES = 10;
@@ -41,27 +50,21 @@ void restartWithMessage(const char* reason) {
 }
 
 void setup_wifi() {
-  delay(10);
-  Serial.println();
   Serial.print("Conectando a ");
   Serial.println(ssid);
-
   WiFi.begin(ssid, password);
-  delay(100); // pausa para estabilizar
 
   int wifi_attempts = 0;
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
     wifi_attempts++;
-    if (wifi_attempts > 20) { // 10 segundos
+    if (wifi_attempts > 20) {
       restartWithMessage("No se pudo conectar a WiFi. Reiniciando...");
     }
   }
 
-  Serial.println("");
-  Serial.println("WiFi conectado");
-  Serial.println("Dirección IP: ");
+  Serial.println("\nWiFi conectado. IP: ");
   Serial.println(WiFi.localIP());
 }
 
@@ -70,11 +73,11 @@ void reconnect() {
     Serial.print("Intentando conexión MQTT...");
     String clientId = "ESP32Client-";
     clientId += String(random(0xffff), HEX);
-    
+
     if (client.connect(clientId.c_str(), mqtt_user, mqtt_password)) {
       Serial.println("Conectado al servidor MQTT");
-      client.publish(status_topic, "Conectado");
-      mqtt_retries = 0; // reiniciar el contador si conecta
+      client.publish(status_topic, "ESP32 conectado");
+      mqtt_retries = 0;
     } else {
       Serial.print("Falló, rc=");
       Serial.print(client.state());
@@ -91,18 +94,16 @@ void reconnect() {
 void setup() {
   Serial.begin(9600);
 
-  setup_wifi();          // Conexión WiFi primero
-  Wire.begin();          // Iniciar I2C
-  delay(1000);           // Esperar estabilización de sensores
+  setup_wifi();
+  Wire.begin();
+  delay(1000);
 
   if (!aht10.begin()) {
-    restartWithMessage("Error al iniciar AHT10. Reiniciando...");
+    restartWithMessage("Error al iniciar AHT10");
   }
 
-  delay(500);
-
   if (!lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE)) {
-    restartWithMessage("Error al iniciar BH1750. Reiniciando...");
+    restartWithMessage("Error al iniciar BH1750");
   }
 
   client.setServer(mqtt_server, mqtt_port);
@@ -115,27 +116,30 @@ void loop() {
   client.loop();
 
   unsigned long now = millis();
-  if (now - lastMsg > 2000) {
+  float temp = aht10.readTemperature();
+  float hum = aht10.readHumidity();
+  float lux = lightMeter.readLightLevel();
+
+  bool sendTemp = abs(temp - lastTemp) >= deltaTemp;
+  bool sendHum = abs(hum - lastHum) >= deltaHum;
+  bool sendLux = abs(lux - lastLux) >= deltaLux;
+  bool timeElapsed = now - lastMsg >= publishInterval;
+
+  if (sendTemp || sendHum || sendLux || timeElapsed) {
     lastMsg = now;
+    lastTemp = temp;
+    lastHum = hum;
+    lastLux = lux;
 
-    // Leer sensores
-    float temp = aht10.readTemperature();
-    float hum = aht10.readHumidity();
-    float lux = lightMeter.readLightLevel();
+    StaticJsonDocument<200> doc;
+    doc["temperatura"] = temp;
+    doc["humedad"] = hum;
+    doc["lux"] = lux;
 
-    // Publicar datos
-    snprintf(msg, MSG_BUFFER_SIZE, "%.2f", temp);
-    client.publish(temp_topic, msg);
-    
-    snprintf(msg, MSG_BUFFER_SIZE, "%.2f", hum);
-    client.publish(hum_topic, msg);
-    
-    snprintf(msg, MSG_BUFFER_SIZE, "%.2f", lux);
-    client.publish(lux_topic, msg);
+    serializeJson(doc, msg);
+    client.publish(env_topic, msg);
 
-    // Mostrar en consola
-    Serial.print("Temp: "); Serial.print(temp); Serial.print("°C");
-    Serial.print(" | Hum: "); Serial.print(hum); Serial.print("%");
-    Serial.print(" | Lux: "); Serial.print(lux); Serial.println(" lx");
+    Serial.print("JSON enviado: ");
+    Serial.println(msg);
   }
 }
