@@ -129,6 +129,7 @@ La FM transmite información variando la frecuencia de una onda portadora, en co
 ![imagen](https://github.com/user-attachments/assets/2f901e58-1ddd-4d84-b742-54dfc2282125)
 
 #### **3- ¿Por qué son necesarios los protocolos IoT**
+
 ![image](https://github.com/user-attachments/assets/415458b5-9e97-4dc3-8905-51301f277392)
 
 Los protocolos IoT son fundamentales para la comunicación entre dispositivos y la transmisión de datos en el Internet de las Cosas (IoT). Garantizan que los dispositivos puedan entender la información intercambiada, independientemente de su fabricante o plataforma. 
