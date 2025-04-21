@@ -186,7 +186,7 @@ Las modulaciones digitales ASK, FSK y PSK se usan en sistemas de comunicación p
 - Transmisión de datos por cable, como Ethernet, USB y HDMI
 - Transmisión de datos por radio, como Wi-Fi, Bluetooth y 4G/5G
 - Sistemas de control
-- 
+  
   ![imagen](https://github.com/user-attachments/assets/53418f19-f5ae-426f-aced-9ab4e436d365)
 
 #### **6) ¿Qué es el Protocolo HTTP?, ¿Cuáles son sus características?Ejemplifique.**
