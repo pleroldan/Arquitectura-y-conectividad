@@ -133,4 +133,26 @@ Se usa un mando a distancia para controlar una lámpara inteligente a través de
 ![image](https://github.com/user-attachments/assets/937951b0-f1a3-4d1c-b46d-9af8751e991e)
 ![image](https://github.com/user-attachments/assets/84db6bd6-d061-4618-b122-567dcfbc1c33)
      
+#### **3) ¿Cómo se aplica la Frecuencia Modulada (FM) en sistemas IoT?. ¿Dónde se usa?. Ejemplifique.![imagen](https://github.com/user-attachments/assets/d1b00b96-41b8-4457-94a5-5b0f81a2ee73)
 
+La frecuencia modulada (FM) se usa en radio, televisión, radar, telefonía móvil, y más.
+**Aplicaciones de la FM**
+
+- Radio: La FM se usa para transmitir música y voz en la radio. La radio FM ofrece mejor calidad de
+sonido y menor interferencia que la radio AM.
+- Televisión: La FM se usa para transmitir audio en la televisión analógica.
+- Radar: La FM se usa para detectar y determinar la posición de objetos en movimiento.
+- Telefonía móvil: La FM se usa en sistemas de telefonía móvil.
+- Telemetría: La FM se usa en sistemas de telemetría.
+- Transmisiones de fax: La FM se usa en transmisiones de fax.
+- Radioaficionados: La FM se usa en sistemas de radioaficionados.
+- Sistemas de radio bidireccionales: La FM se usa en sistemas de radio bidireccionales.
+ 
+**Cómo funciona la FM**
+La FM transmite información variando la frecuencia de una onda portadora, en contraste con las ondas de AM que varían la amplitud. La FM tiene varias ventajas sobre el sistema AM, como su mayor resistencia a interferencias y su ilimitada fidelidad tonal
+
+*Sistemas de frecuencia modulada (F.M.) -Sordos*
+![imagen](https://github.com/user-attachments/assets/2f901e58-1ddd-4d84-b742-54dfc2282125)
+
+#### **4) ¿Cómo se aplica la Cuadratura de Amplitud (QAM) en sistemas IoT?.¿Dónde se usa?.**
+Ejemplifique.
