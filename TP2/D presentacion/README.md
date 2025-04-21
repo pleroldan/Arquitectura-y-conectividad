@@ -31,75 +31,50 @@ Los datos que se comunican entre dispositivos IoT pueden ser:
 - **Datos de automatización**, que generan dispositivos y sistemas automatizados. 
 - **Datos de ubicación**, que comunican la ubicación geográfica del dispositivo o sistema.
 #### **2) ¿Cómo se aplica la Amplitud Modulada (AM) en sistemas IoT?. ¿Dónde se usa?. Ejemplifique.**
-La modulación de amplitud (AM) se usa en sistemas de radio y comunicaciones, como la radiofonía, los módems y los sistemas de radio bidireccional. 
-¿Cómo funciona la AM?
+La modulación de amplitud (AM) se usa en sistemas de radio y comunicaciones, como la radiofonía, los módems y los sistemas de radio bidireccional, se aplica en sistemas IoT para transmitir información a través de señales de radio, variando la amplitud de una señal portadora de alta frecuencia según la información que se desea transmitir. Se utiliza en aplicaciones que requieren comunicaciones de bajo ancho de banda y larga distancia, como la transmisión de datos de sensores a una estación base central. 
+
+**¿Cómo funciona la AM?**
+
 Se modifica la amplitud de una señal portadora de alta frecuencia, de acuerdo con la señal que se quiere transmitir. 
 Esto crea dos nuevas frecuencias de banda lateral, por encima y por debajo de la frecuencia portadora. 
 El receptor debe recuperar la forma de onda de la envolvente para poder recuperar el mensaje original. 
-¿Dónde se usa la AM?
-En la radiofonía, en las ondas medias, ondas cortas, e incluso en la VHF. 
-En las comunicaciones de radio entre los aviones y las torres de control de los aeropuertos. 
-En los módems de ordenador. 
-En la radio de banda ciudadana. 
-Para controlar los píxeles de la pantalla de televisión. 
-¿Qué es la modulación?
-La modulación es un proceso que permite transmitir información a través de una señal portadora, como una onda de radio, una fibra óptica o un cable.
 
-![image](https://github.com/user-attachments/assets/df8fb04c-a787-44ba-b8d9-fb88c1a5ed71)
+**¿Dónde se usa la AM?**
 
-La modulación de amplitud (AM) se usa en sistemas de radio y comunicaciones, como la radiofonía, los módems y los sistemas de radio bidireccional. 
-
-¿Cómo funciona la AM?
-Se modifica la amplitud de una señal portadora de alta frecuencia, de acuerdo con la señal que se quiere transmitir. 
-Esto crea dos nuevas frecuencias de banda lateral, por encima y por debajo de la frecuencia portadora. 
-El receptor debe recuperar la forma de onda de la envolvente para poder recuperar el mensaje original. 
-¿Dónde se usa la AM?
-En la radiofonía, en las ondas medias, ondas cortas, e incluso en la VHF. 
-En las comunicaciones de radio entre los aviones y las torres de control de los aeropuertos. 
-En los módems de ordenador. 
-En la radio de banda ciudadana. 
-Para controlar los píxeles de la pantalla de televisión. 
-¿Qué es la modulación?
-La modulación es un proceso que permite transmitir información a través de una señal portadora, como una onda de radio, una fibra óptica o un cable.
-
-![image](https://github.com/user-attachments/assets/eac8e2a3-54f3-4059-ae50-3f8c91a20ea2)
-
-¿Cómo se aplica la Amplitud Modulada (AM) en sistemas IoT?. ¿Dónde se usa?. Ejemplifica.
-La Amplitud Modulada (AM) se aplica en sistemas IoT para transmitir información a través de señales de radio, variando la amplitud de una señal portadora de alta frecuencia según la información que se desea transmitir. Se utiliza en aplicaciones que requieren comunicaciones de bajo ancho de banda y larga distancia, como la transmisión de datos de sensores a una estación base central. 
-
-![image](https://github.com/user-attachments/assets/052f971c-67ca-4a4d-8014-bf4bd39fda1f)
-
-Dónde se usa:
-•	Sensores de monitoreo ambiental:
-La AM puede utilizarse para transmitir datos de sensores de temperatura, humedad, presión, etc., a una estación base central para su registro y análisis.
+- En la radiofonía, en las ondas medias, ondas cortas, e incluso en la VHF.
+- Sensores de monitoreo ambiental: La AM puede utilizarse para transmitir datos de sensores de temperatura, humedad, presión, etc., a una estación base central para su registro y análisis.
+- En las comunicaciones de radio entre los aviones y las torres de control de los aeropuertos. 
+- En los módems de ordenador. 
+- En la radio de banda ciudadana. 
+- Para controlar los píxeles de la pantalla de televisión. 
 
 ![image](https://github.com/user-attachments/assets/c84c1477-9fb8-436e-bb7f-8cde3e5e50bf)
 ![image](https://github.com/user-attachments/assets/a98d384a-27ca-4ecc-aa78-36e1a657671c)
 ![image](https://github.com/user-attachments/assets/6d64d27a-b49c-4db7-be70-ca5638834a4a)
-![image](https://github.com/user-attachments/assets/dbf21052-e3a3-452e-b117-450c858f5041)
 
-•	Monitoreo de salud y bienestar:
+
+- Monitoreo de salud y bienestar:
 En dispositivos de seguimiento de actividad física o salud, la AM puede ser usada para transmitir datos de frecuencia cardíaca, patrones de sueño, etc., a una aplicación móvil o dispositivo central.
 
 ![image](https://github.com/user-attachments/assets/4fc455bb-4414-48fc-a39f-05936834a860)
 ![image](https://github.com/user-attachments/assets/a0341ead-8a22-4773-9b53-8e2bccd4b2d2)
 ![image](https://github.com/user-attachments/assets/ad8fab13-f0b1-40e9-8c03-e33af21c9c54)
 
-•	Sistemas de seguridad:
+- Sistemas de seguridad:
 La AM puede utilizarse para transmitir señales de alerta de intrusión o de detección de movimientos a un sistema de seguridad central.
 
 ![image](https://github.com/user-attachments/assets/142c59af-0222-4603-9b3a-5703cf8b99d6)
 ![image](https://github.com/user-attachments/assets/fa2ae2b8-7cb1-433e-b6ae-9fbbd7a711aa)
 ![image](https://github.com/user-attachments/assets/2d7c1a23-f861-4da9-8733-eaebf5949dbc)
 
-•	Control remoto de dispositivos:
+- Control remoto de dispositivos:
 La AM puede ser utilizada para controlar dispositivos inteligentes a distancia, como luces, electrodomésticos o sistemas de iluminación. 
 
 ![image](https://github.com/user-attachments/assets/93c6d7ea-7d54-4d39-9d15-399cac636652)
 ![image](https://github.com/user-attachments/assets/c050ca60-10f5-48b8-8586-1784471bbb8d)
 ![image](https://github.com/user-attachments/assets/cfbbe60d-bb93-46c8-bc8b-e23d8f99b3bc)
 
-•	Comunicaciones rurales:
+- Comunicaciones rurales:
 En áreas donde la infraestructura de comunicación digital es limitada, la AM puede ser una opción viable para transmitir información de sensores o dispositivos remotos. 
 
 ![image](https://github.com/user-attachments/assets/7322171b-16a4-496f-9701-ebf024f5afdc)
@@ -132,7 +107,17 @@ Se usa un mando a distancia para controlar una lámpara inteligente a través de
 ![image](https://github.com/user-attachments/assets/8b7d7788-fcba-4f16-b3e0-9b80ed317087)
 ![image](https://github.com/user-attachments/assets/937951b0-f1a3-4d1c-b46d-9af8751e991e)
 ![image](https://github.com/user-attachments/assets/84db6bd6-d061-4618-b122-567dcfbc1c33)
-     
+
+ **¿Qué es la modulación?**
+
+La modulación es un proceso que permite transmitir información a través de una señal portadora, como una onda de radio, una fibra óptica o un cable.
+
+![image](https://github.com/user-attachments/assets/df8fb04c-a787-44ba-b8d9-fb88c1a5ed71)
+
+![image](https://github.com/user-attachments/assets/eac8e2a3-54f3-4059-ae50-3f8c91a20ea2)
+
+![image](https://github.com/user-attachments/assets/052f971c-67ca-4a4d-8014-bf4bd39fda1f)
+
 #### **3) ¿Cómo se aplica la Frecuencia Modulada (FM) en sistemas IoT?. ¿Dónde se usa?. Ejemplifique.![imagen](https://github.com/user-attachments/assets/d1b00b96-41b8-4457-94a5-5b0f81a2ee73)
 
 La frecuencia modulada (FM) se usa en radio, televisión, radar, telefonía móvil, y más.
@@ -154,5 +139,61 @@ La FM transmite información variando la frecuencia de una onda portadora, en co
 *Sistemas de frecuencia modulada (F.M.) -Sordos*
 ![imagen](https://github.com/user-attachments/assets/2f901e58-1ddd-4d84-b742-54dfc2282125)
 
-#### **4) ¿Cómo se aplica la Cuadratura de Amplitud (QAM) en sistemas IoT?.¿Dónde se usa?.**
-Ejemplifique.
+#### **4) ¿Cómo se aplica la Cuadratura de Amplitud (QAM) en sistemas IoT?.¿Dónde se usa?.Ejemplifique.**
+![imagen](https://github.com/user-attachments/assets/fc162d81-798a-49c2-8c4c-514a2948fe42)
+
+La modulación de amplitud en cuadratura (QAM) se usa en muchos sistemas de comunicación, entre ellos, el Wi-Fi, la televisión por cable y los sistemas de radiocomunicaciones.
+**Aplicaciones**
+- Televisión por cable: QAM es el estándar para transmitir canales de cable digitales.
+- Wi-Fi: QAM se usa en los estándares Wi-Fi 802.11.
+- Radiocomunicaciones: QAM se usa en sistemas celulares 4G y 5G.
+- Módems de acceso telefónico: QAM se usa en módems de acceso telefónico.
+
+**Cómo funciona**
+
+- QAM modula simultáneamente la amplitud y la fase de la onda portadora.
+- QAM carga señales en dos portadoras ortogonales, normalmente seno y coseno.
+- QAM ajusta las amplitudes de las portadoras y superpone sus amplitudes para generar las señales moduladas.
+
+**Ventajas de QAM**
+
+- QAM permite representar múltiples bits por símbolo.
+- QAM mejora la transmisión de datos.
+- QAM logra mayores velocidades de transmisión de datos, mayor eficiencia y mejor calidad de servicio.
+
+**Desventajas de QAM**
+- QAM es más susceptible al ruido que los esquemas que utilizan solo fase o amplitud.
+
+#### **5) ¿Cómo se aplica las Modulaciones Digitales ASK, FSK, PSK en sistemas IoT?. ¿Dónde se usa?. Ejemplifique.**
+![imagen](https://github.com/user-attachments/assets/9ea153c9-913a-45b0-9463-1293a2d4c370)
+
+Las modulaciones digitales ASK, FSK y PSK se usan en sistemas de comunicación para transmitir datos digitales de forma eficiente y confiable.
+
+**Modulación por desplazamiento de amplitud (ASK)**
+
+- Se basa en variar la amplitud de la señal portadora
+- Es la técnica más sencilla de modulación digital
+- Se usa para transmitir datos a baja velocidad
+- Se usa para transmitir datos digitales por fibra óptica
+- Se usa en transmisores LED
+
+**Modulación por desplazamiento de frecuencia (FSK)**
+
+- Se basa en variar la frecuencia de la señal portadora
+- Es más compleja que la ASK y se usa para transmitir datos a alta velocidad
+- Se usa en módems, radios FM, sistemas de comunicaciones celulares
+- Se usa para la transmisión de datos en algunas redes de computadoras
+
+**Modulación por desplazamiento de fase (PSK)**
+
+- Se basa en variar la fase de la señal portadora
+- Las modulaciones avanzadas a menudo se basan en la modulación de fase debido a su simplicidad y eficiencia.
+  
+**Las modulaciones digitales se utilizan en:**
+- Transmisión de datos por cable, como Ethernet, USB y HDMI
+- Transmisión de datos por radio, como Wi-Fi, Bluetooth y 4G/5G
+- Sistemas de control
+  ![imagen](https://github.com/user-attachments/assets/53418f19-f5ae-426f-aced-9ab4e436d365)
+
+#### **6) ¿Qué es el Protocolo HTTP?, ¿Cuáles son sus características?Ejemplifique.**
+![imagen](https://github.com/user-attachments/assets/b217da32-7c24-48d3-9cc1-c3ce0c347679)
