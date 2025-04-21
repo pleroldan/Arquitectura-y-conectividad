@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 # Prototipo de ESP32 como Publisher en MQTT
-=======
-# Prototipo de esp32 como Publisher en MQTT
 
->>>>>>> 00a3b2ea2c886157f324cc7ffa624f91a2ece417
-
-Este prototipo utiliza un ESP32 para medir **temperatura**, **humedad relativa** y **luminosidad** mediante los sensores **AHT10** y **BH1750**, enviando los datos a un **broker MQTT** a través de una red WiFi.
+Este proyecto utiliza un ESP32 para medir **temperatura**, **humedad relativa** y **luminosidad** mediante los sensores **AHT10** y **BH1750**, enviando los datos a un **broker MQTT** a través de una red WiFi.
 
 ---
 
