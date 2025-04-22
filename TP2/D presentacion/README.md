@@ -125,12 +125,9 @@ sonido y menor interferencia que la radio AM.
 **¿Cómo funciona la FM?**
 La FM transmite información variando la frecuencia de una onda portadora, en contraste con las ondas de AM que varían la amplitud. La FM tiene varias ventajas sobre el sistema AM, como su mayor resistencia a interferencias y su ilimitada fidelidad tonal
 
-*Sistemas de frecuencia modulada (F.M.) -Sordos*
 ![imagen](https://github.com/user-attachments/assets/2f901e58-1ddd-4d84-b742-54dfc2282125)
 
-![image](https://github.com/user-attachments/assets/415458b5-9e97-4dc3-8905-51301f277392)
-
-
+*Sistemas de frecuencia modulada (F.M.) -Sordos*
 
 #### **4) ¿Cómo se aplica la Cuadratura de Amplitud (QAM) en sistemas IoT?.¿Dónde se usa?.Ejemplifique.**
 ![imagen](https://github.com/user-attachments/assets/fc162d81-798a-49c2-8c4c-514a2948fe42)
