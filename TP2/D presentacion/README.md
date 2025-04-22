@@ -128,29 +128,9 @@ La FM transmite información variando la frecuencia de una onda portadora, en co
 *Sistemas de frecuencia modulada (F.M.) -Sordos*
 ![imagen](https://github.com/user-attachments/assets/2f901e58-1ddd-4d84-b742-54dfc2282125)
 
-#### **3- ¿Por qué son necesarios los protocolos IoT**
-
-
 ![image](https://github.com/user-attachments/assets/415458b5-9e97-4dc3-8905-51301f277392)
 
 
-Los protocolos IoT son fundamentales para la comunicación entre dispositivos y la transmisión de datos en el Internet de las Cosas (IoT). Garantizan que los dispositivos puedan entender la información intercambiada, independientemente de su fabricante o plataforma. 
-**¿Por qué son necesarios?**
-**Comunicación fluida:**
-Los protocolos establecen un lenguaje común para que los dispositivos se comuniquen entre sí, permitiendo el intercambio de datos de forma eficiente. 
-**Interoperabilidad:**
-Permiten que dispositivos de diferentes fabricantes y plataformas puedan funcionar juntos, lo que facilita la creación de sistemas IoT complejos. 
-**Transmisión de datos:**
-Los protocolos de transporte, como MQTT, aseguran la entrega confiable de datos entre los dispositivos y los servidores. 
-**Eficiencia y seguridad:**
-Los protocolos IoT, como TLS/SSL y DTLS, incorporan mecanismos de cifrado y autenticación para proteger la información y la integridad de los datos. 
-Adaptabilidad a diferentes escenarios:
-Se han desarrollado diferentes protocolos IoT para distintos usos y entornos, como dispositivos de bajo consumo, redes de área local y redes de gran alcance. 
-**Base de la infraestructura IoT:**
-Los protocolos son la base para la construcción de la pila tecnológica IoT, sin los cuales el hardware y la conectividad serían inútiles. 
-**Posibilidad de interacción y control:**
-A través de la transmisión de datos y comandos, los usuarios finales pueden interactuar con los dispositivos IoT, controlarlos y obtener información valiosa. 
-Los protocolos IoT son esenciales para que el IoT funcione de manera efectiva, permitiendo la comunicación, la interoperabilidad y la seguridad en el intercambio de información entre dispositivos. 
 
 #### **4) ¿Cómo se aplica la Cuadratura de Amplitud (QAM) en sistemas IoT?.¿Dónde se usa?.Ejemplifique.**
 ![imagen](https://github.com/user-attachments/assets/fc162d81-798a-49c2-8c4c-514a2948fe42)
