@@ -1,47 +1,35 @@
 #include <WiFi.h>
-#include <Arduino.h>
+#include <WiFiClientSecure.h>
 #include <PubSubClient.h>
 #include <Wire.h>
 #include <AHT10.h>
 #include <BH1750.h>
 #include <ArduinoJson.h>
+#define LED_BUILTIN 2
 
 // Configuración WiFi
-const char* ssid = "Clarowifi4228";
-const char* password = "10052069";
+const char* ssid = "SSID";
+const char* password = "Pass";
 
 // Configuración MQTT
-const char* mqtt_server = "192.168.100.3";
-const int mqtt_port = 1883;
-const char* mqtt_user = "";
-const char* mqtt_password = "";
+const char* mqtt_server = "144b0f0b708947df835498a9bf10bfb5.s1.eu.hivemq.cloud";
+const int mqtt_port = 8883;
+const char* mqtt_user = "ispc2025";
+const char* mqtt_password = "ispc2025A";
 
-// Topic MQTT
+// Topics MQTT
 const char* env_topic = "sensor/ambiente";
-const char* status_topic = "sensor/estado";
+const char* status_topic = "sensor/estado";  //pendiente de immplementarar
+const char* request_topic = "sensor/solicitud"; // Topic para recibir solicitudes
 
 // Objetos
-WiFiClient espClient;
+WiFiClientSecure espClient;
 PubSubClient client(espClient);
 AHT10 aht10(AHT10_ADDRESS_0X38);
 BH1750 lightMeter;
 
-unsigned long lastMsg = 0;
-const unsigned long publishInterval = 30000; // 30 segundos
 #define MSG_BUFFER_SIZE (256)
 char msg[MSG_BUFFER_SIZE];
-
-// Últimos valores para comparar
-float lastTemp = -1000;
-float lastHum = -1000;
-float lastLux = -1000;
-
-const float deltaTemp = 2.0;
-const float deltaHum = 2.0;
-const float deltaLux = 2.0;
-
-int mqtt_retries = 0;
-const int MAX_MQTT_RETRIES = 10;
 
 void restartWithMessage(const char* reason) {
   Serial.println(reason);
@@ -68,6 +56,38 @@ void setup_wifi() {
   Serial.println(WiFi.localIP());
 }
 
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Mensaje recibido en topic: ");
+  Serial.println(topic);
+
+  // Verifica si el mensaje es para solicitar datos
+  if (strcmp(topic, request_topic) == 0) {
+    Serial.println("Solicitud de datos recibida");
+
+    // Prender LED interno
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(500);
+    digitalWrite(LED_BUILTIN, LOW);
+
+    // Leer sensores
+    float temp = aht10.readTemperature();
+    float hum = aht10.readHumidity();
+    float lux = lightMeter.readLightLevel();
+
+    // Crear JSON
+    StaticJsonDocument<256> doc;
+    doc["temperatura"] = temp;
+    doc["humedad"] = hum;
+    doc["lux"] = lux;
+
+    serializeJson(doc, msg);
+    client.publish(env_topic, msg);
+
+    Serial.print("Datos enviados: ");
+    Serial.println(msg);
+  }
+}
+
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Intentando conexión MQTT...");
@@ -76,16 +96,12 @@ void reconnect() {
 
     if (client.connect(clientId.c_str(), mqtt_user, mqtt_password)) {
       Serial.println("Conectado al servidor MQTT");
+      client.subscribe(request_topic); // Suscribirse para recibir solicitudes
       client.publish(status_topic, "ESP32 conectado");
-      mqtt_retries = 0;
     } else {
       Serial.print("Falló, rc=");
       Serial.print(client.state());
       Serial.println(" intentando de nuevo en 5 segundos");
-      mqtt_retries++;
-      if (mqtt_retries > MAX_MQTT_RETRIES) {
-        restartWithMessage("Demasiados errores de conexión MQTT. Reiniciando...");
-      }
       delay(5000);
     }
   }
@@ -93,6 +109,9 @@ void reconnect() {
 
 void setup() {
   Serial.begin(9600);
+
+  pinMode(LED_BUILTIN, OUTPUT); // Configurar el LED
+  digitalWrite(LED_BUILTIN, LOW);
 
   setup_wifi();
   Wire.begin();
@@ -106,7 +125,9 @@ void setup() {
     restartWithMessage("Error al iniciar BH1750");
   }
 
+  espClient.setInsecure(); // No verificación SSL
   client.setServer(mqtt_server, mqtt_port);
+  client.setCallback(callback);
 }
 
 void loop() {
@@ -114,32 +135,4 @@ void loop() {
     reconnect();
   }
   client.loop();
-
-  unsigned long now = millis();
-  float temp = aht10.readTemperature();
-  float hum = aht10.readHumidity();
-  float lux = lightMeter.readLightLevel();
-
-  bool sendTemp = abs(temp - lastTemp) >= deltaTemp;
-  bool sendHum = abs(hum - lastHum) >= deltaHum;
-  bool sendLux = abs(lux - lastLux) >= deltaLux;
-  bool timeElapsed = now - lastMsg >= publishInterval;
-
-  if (sendTemp || sendHum || sendLux || timeElapsed) {
-    lastMsg = now;
-    lastTemp = temp;
-    lastHum = hum;
-    lastLux = lux;
-
-    StaticJsonDocument<200> doc;
-    doc["temperatura"] = temp;
-    doc["humedad"] = hum;
-    doc["lux"] = lux;
-
-    serializeJson(doc, msg);
-    client.publish(env_topic, msg);
-
-    Serial.print("JSON enviado: ");
-    Serial.println(msg);
-  }
 }
