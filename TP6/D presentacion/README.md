@@ -9,7 +9,7 @@
 
 
 
-##OBJETIVO
+## OBJETIVO
 
 En este espacio se realiza la presentación del Trabajo Práctico N.° 6, enmarcado en la materia Arquitectura y Conectividad.
 La misma resume los sprendizajes, el desarrollo grupal y los resultados alcanzados en la implementación de dos proyectos con conectividad Bluetooth utilizando ESP32.
