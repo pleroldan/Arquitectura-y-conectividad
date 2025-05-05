@@ -12,7 +12,7 @@
 ## OBJETIVO
 
 En este espacio se realiza la presentación del Trabajo Práctico N.° 6, enmarcado en la materia Arquitectura y Conectividad.
-La misma resume los sprendizajes, el desarrollo grupal y los resultados alcanzados en la implementación de dos proyectos con conectividad Bluetooth utilizando ESP32.
+La misma resume los aprendizajes, el desarrollo grupal y los resultados alcanzados en la implementación de dos proyectos, con conectividad Bluetooth utilizando ESP32.
 
 
 ## Actividades desarrolladas
@@ -26,6 +26,6 @@ La misma resume los sprendizajes, el desarrollo grupal y los resultados alcanzad
 ### Proyecto 2 - Control de LEDs y Lectura de Potenciómetro
 - Comunicación bidireccional vía Bluetooth entre Smartphone y ESP32.
 - Control de **dos LEDs** mediante:
-    ° Comandos por voz.
-    ° Interfaz móvil.
+    - Comandos por voz.
+    - Interfaz móvil.
 
