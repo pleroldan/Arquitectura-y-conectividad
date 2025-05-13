@@ -28,4 +28,9 @@ La misma resume los aprendizajes, el desarrollo grupal y los resultados alcanzad
 - Control de **dos LEDs** mediante:
     - Comandos por voz.
     - Interfaz móvil.
+      
+**Parte1:**
+[httpsyoutube.comshorts1v64HNI8y6E](https://youtube.com/shorts/1v64HNI8y6E)
 
+**Parte2:**
+[https://youtube.com/shorts/O4EbGYshJ4E](https://youtube.com/shorts/O4EbGYshJ4E)
