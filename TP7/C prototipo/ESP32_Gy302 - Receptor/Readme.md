@@ -41,3 +41,18 @@ Este proyecto utiliza un ESP32 para:
 - `LED_OFF` → Apaga el LED
 
 ## 📤 Formato de datos enviados
+
+LUX=123.4
+
+
+
+
+  
+Donde `123.4` es el valor actual de luminosidad medida.
+
+## ✅ Requisitos
+
+- Bibliotecas: `SPI`, `LoRa`, `Wire`, `BH1750`
+
+---
+
