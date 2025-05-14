@@ -11,8 +11,10 @@
 #define LORA_MISO  19
 #define LORA_MOSI  23
 
-// Configuración LED y sensor
-#define LED_PIN    16
+// Pines LED
+#define LED_PIN       16  // Controlado por comandos
+#define LIGHT_LED_PIN 17  // Se enciende si está oscuro
+
 BH1750 lightSensor;
 
 void setup() {
@@ -20,10 +22,12 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, LOW);
 
+  pinMode(LIGHT_LED_PIN, OUTPUT);
+  digitalWrite(LIGHT_LED_PIN, LOW);
+
   // Inicialización I2C y BH1750
   Wire.begin();
- // Inicialización CORRECTA:
-  if (!lightSensor.begin()) {  // Sin modo de operación
+  if (!lightSensor.begin()) {
     Serial.println("❌ Fallo al iniciar BH1750");
     while (true);
   }
@@ -57,14 +61,25 @@ void loop() {
 
   // Lectura y envío de luminosidad
   static unsigned long ultimoEnvio = 0;
-  if (millis() - ultimoEnvio > 3000) {  // Envía cada 3 segundos
+  if (millis() - ultimoEnvio > 3000) {
     float lux = lightSensor.readLightLevel();
     String datos = "LUX=" + String(lux, 1);
-    
+
+    // Envío por LoRa
     LoRa.beginPacket();
     LoRa.print(datos);
     LoRa.endPacket();
     Serial.println("📤 Datos enviados: " + datos);
+
+    // Control del LED según luminosidad
+    if (lux < 50) {
+      digitalWrite(LIGHT_LED_PIN, HIGH);
+      Serial.println("🌑 Ambiente oscuro → LED ambiental encendido");
+    } else {
+      digitalWrite(LIGHT_LED_PIN, LOW);
+      Serial.println("☀️ Ambiente iluminado → LED ambiental apagado");
+    }
+
     ultimoEnvio = millis();
   }
 }
